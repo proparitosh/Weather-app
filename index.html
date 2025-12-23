@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-cloud-bolt"></i> Weather App</h1>
+        
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name (e.g., London)">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="loader" id="loader"></div>
+        <p class="error" id="error-message"></p>
+
+        <div class="weather-display" id="weather-card">
+            <div class="weather-icon">
+                <i class="fa-solid fa-cloud" id="w-icon"></i>
+            </div>
+            <h2 class="temp"><span id="temp-val">0</span>°C</h2>
+            <p class="description" id="w-desc">Clear Sky</p>
+            <h3 id="city-name" style="margin-bottom: 15px;">City Name</h3>
+
+            <div class="details">
+                <div class="col">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="col-text">
+                        <span id="wind-speed">0 km/h</span>
+                        <p>Wind</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div class="col-text">
+                        <!-- Note: Open-Meteo standard API is sparse on humidity without extra params, 
+                             so we'll simulate or hide if unavailable, but I added the param to fetch it. -->
+                        <span id="humidity">--%</span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
